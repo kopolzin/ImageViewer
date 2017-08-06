@@ -9,6 +9,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QStringListModel>
 
 namespace Ui {
@@ -37,7 +38,6 @@ private:
     QHBoxLayout *hBoxDirectoryInput;
     QWidget *saveImageWidget;
     QHBoxLayout *saveImageLayout;
-    QSpacerItem *spacerItem;
     QLineEdit *extensionInput;
     QLineEdit *directoryInput;
     QPushButton *selectDirectoryButton;

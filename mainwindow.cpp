@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // Create a widget that displays the image of the selected file
     imageWidget = new QWidget();
     vBoxImageWidget = new QVBoxLayout();
-    imageWidget->setLayout(vBoxImageWidget);
     imageLabel = new QLabel();
 
     // Set the label's maximum size so large images fit on the primary monitor
@@ -74,14 +73,12 @@ MainWindow::MainWindow(QWidget *parent) :
     saveImageWidget = new QWidget();
     saveImageWidget->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
     saveImageLayout = new QHBoxLayout();
-    saveImageWidget->setLayout(saveImageLayout);
-    spacerItem = new QSpacerItem(1,1,QSizePolicy::Expanding);
-    saveImageLayout->addSpacerItem(spacerItem);
     saveImageLayout->addWidget(saveImageButton);
-    saveImageLayout->addSpacerItem(spacerItem);
+    saveImageWidget->setLayout(saveImageLayout);
 
     vBoxImageWidget->addWidget(imageLabel);
     vBoxImageWidget->addWidget(saveImageWidget);
+    imageWidget->setLayout(vBoxImageWidget);
 
     // When a filename is clicked, display its image
     connect(fileListView,
